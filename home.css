@@ -1,0 +1,595 @@
+/* ===== Brew Bliss Home Screen =====
+   The phone frame (.app-shell / .mobile-frame) is defined in index.css. */
+
+.home-screen {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: #292725;
+    background: #ffffff;
+    font-family: inherit;
+}
+
+/* ---------- Header ---------- */
+.home-header {
+    flex-shrink: 0;
+    padding: 17px 21px 25px;
+    background: #171717;
+    color: #ffffff;
+}
+
+.location-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.location-label {
+    display: block;
+    margin-bottom: 6px;
+    color: #929292;
+    font-size: 10px;
+}
+
+.location-button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.notification-button {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border: 1px solid #424242;
+    border-radius: 50%;
+    background: transparent;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.search-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    min-width: 0;
+    height: 47px;
+    padding: 0 14px;
+    border-radius: 13px;
+    background: #2b2b2b;
+}
+
+.search-icon {
+    display: grid;
+    place-items: center;
+    color: #dedede;
+}
+
+.search-box input {
+    width: 100%;
+    min-width: 0;
+    border: 0;
+    outline: none;
+    background: transparent;
+    color: #ffffff;
+    font: inherit;
+    font-size: 14px;
+}
+
+.search-box input::placeholder {
+    color: #a4a4a4;
+}
+
+.filter-button {
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 47px;
+    flex-shrink: 0;
+    border: 0;
+    border-radius: 12px;
+    background: #cf814b;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.filter-panel {
+    margin-top: 12px;
+    padding: 12px;
+    border-radius: 12px;
+    background: #292929;
+    font-size: 12px;
+}
+
+.sort-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.sort-chip {
+    min-height: 32px;
+    padding: 0 12px;
+    border: 0;
+    border-radius: 9px;
+    background: #3a3a3a;
+    color: #d4d4d4;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.sort-chip.active {
+    background: #cf814b;
+    color: #ffffff;
+}
+
+/* ---------- Content ---------- */
+.home-content {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 0 21px 20px;
+    scrollbar-width: none;
+}
+
+.home-content::-webkit-scrollbar {
+    display: none;
+}
+
+.promo-banner {
+    position: relative;
+    min-height: 121px;
+    margin-top: 18px;
+    margin-bottom: 20px;
+    padding: 19px 16px;
+    overflow: hidden;
+    border-radius: 17px;
+    background:
+        linear-gradient(90deg, rgba(81, 48, 30, 0.84), rgba(38, 28, 21, 0.35)),
+        url("/assets/Caffee%20Mocha.png") center 48% / cover;
+    color: #ffffff;
+}
+
+.promo-label {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 6px;
+    background: #f25454;
+    font-size: 11px;
+}
+
+.promo-banner h2 {
+    margin: 9px 0 0;
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.6px;
+}
+
+.category-row {
+    display: flex;
+    gap: 8px;
+    margin: 18px 0 27px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.category-row::-webkit-scrollbar {
+    display: none;
+}
+
+.category-chip {
+    flex-shrink: 0;
+    min-height: 37px;
+    padding: 0 14px;
+    border: 0;
+    border-radius: 11px;
+    background: #f5f3f1;
+    color: #6e6965;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.category-chip.active {
+    background: #cf814b;
+    color: #ffffff;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.section-heading h2 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.see-all-button {
+    padding: 5px 0 5px 8px;
+    border: 0;
+    background: transparent;
+    color: #c97643;
+    font-size: 14px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+/* ---------- Coffee cards ---------- */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding-bottom: 15px;
+}
+
+.coffee-card {
+    min-width: 0;
+    overflow: hidden;
+    padding: 8px;
+    border: 1px solid #efedeb;
+    border-radius: 19px;
+    background: #ffffff;
+    box-shadow: 0 3px 12px rgba(30, 24, 19, 0.025);
+}
+
+.coffee-card-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 0.94;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #eee8e2;
+}
+
+.product-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.rating-badge {
+    position: absolute;
+    top: 8px;
+    right: 7px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    padding: 4px 6px;
+    border-radius: 7px;
+    background: rgba(255, 255, 255, 0.96);
+    color: #292725;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.rating-badge svg {
+    color: #f4ad19;
+}
+
+.favorite-button {
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    display: grid;
+    place-items: center;
+    width: 27px;
+    height: 27px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.94);
+    color: #7b746f;
+    cursor: pointer;
+}
+
+.favorite-button.is-favorite {
+    color: #e45454;
+}
+
+.product-info {
+    padding: 9px 2px 2px;
+}
+
+.product-info h3 {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.product-info>p {
+    min-height: 15px;
+    margin: 4px 0 8px;
+    color: #aaa39e;
+    font-size: 10px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.product-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.product-bottom strong {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.add-button {
+    display: grid;
+    place-items: center;
+    width: 31px;
+    height: 31px;
+    flex-shrink: 0;
+    border: 0;
+    border-radius: 10px;
+    background: #cf814b;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* ---------- Bag ---------- */
+.bag-view {
+    padding-top: 20px;
+}
+
+.bag-title {
+    margin: 0 0 16px;
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.bag-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.bag-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px;
+    border: 1px solid #efedeb;
+    border-radius: 16px;
+}
+
+.bag-item img {
+    width: 58px;
+    height: 58px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.bag-item-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.bag-item-info h3 {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.bag-item-info p {
+    margin: 4px 0 0;
+    color: #aaa39e;
+    font-size: 11px;
+}
+
+.qty-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.qty-control button {
+    display: grid;
+    place-items: center;
+    width: 26px;
+    height: 26px;
+    border: 1px solid #e7e3df;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #292725;
+    cursor: pointer;
+}
+
+.bag-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 16px 4px 0;
+    border-top: 1px solid #efedeb;
+    font-size: 14px;
+}
+
+.bag-total strong {
+    font-size: 18px;
+}
+
+/* ---------- Bottom navigation ---------- */
+.bottom-navigation {
+    position: relative;
+    z-index: 5;
+    flex-shrink: 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    min-height: 78px;
+    padding: 9px 9px calc(9px + env(safe-area-inset-bottom));
+    border-top: 1px solid #eeeae7;
+    background: #ffffff;
+    box-shadow: 0 -4px 18px rgba(35, 26, 19, 0.035);
+}
+
+.nav-tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    min-width: 0;
+    border: 0;
+    background: transparent;
+    color: #b9b9b9;
+    cursor: pointer;
+}
+
+.nav-icon {
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.nav-badge {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    min-width: 16px;
+    height: 16px;
+    padding: 0 4px;
+    border-radius: 999px;
+    background: #e45454;
+    color: #ffffff;
+    font-size: 9px;
+    font-weight: 700;
+    line-height: 16px;
+    text-align: center;
+}
+
+.nav-label {
+    font-size: 9px;
+    white-space: nowrap;
+}
+
+.nav-tab.selected {
+    color: #c98043;
+}
+
+.nav-indicator {
+    width: 6px;
+    height: 6px;
+    margin-top: 1px;
+    border-radius: 50%;
+    background: transparent;
+}
+
+.nav-tab.selected .nav-indicator {
+    background: #c98043;
+}
+
+/* ---------- Empty states ---------- */
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 230px;
+    padding-top: 20px;
+    color: #6f6862;
+    text-align: center;
+}
+
+.empty-state h2 {
+    margin: 12px 0 5px;
+    color: #292725;
+    font-size: 19px;
+}
+
+.empty-state p {
+    max-width: 240px;
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.empty-state-icon {
+    display: grid;
+    place-items: center;
+    color: #c98043;
+}
+
+.reset-button {
+    margin-top: 15px;
+    padding: 10px 16px;
+    border: 0;
+    border-radius: 10px;
+    background: #cf814b;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* ---------- Small phones ---------- */
+@media (max-width: 359px) {
+
+    .home-header,
+    .home-content {
+        padding-right: 14px;
+        padding-left: 14px;
+    }
+
+    .category-row {
+        gap: 6px;
+    }
+
+    .category-chip {
+        padding: 0 10px;
+        font-size: 10px;
+    }
+
+    .product-grid {
+        gap: 8px;
+    }
+
+    .coffee-card {
+        padding: 6px;
+    }
+
+    .product-info h3 {
+        font-size: 11px;
+    }
+
+    .product-bottom strong {
+        font-size: 12px;
+    }
+}
